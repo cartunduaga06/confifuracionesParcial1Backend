@@ -23,23 +23,7 @@ spring:
           predicates:
            - Path=/api/series/**
 
-queue:
-   movie:
-    name: MovieQueue
-  serie:
-    name: SerieQueue
-
- management:
-   endpoints:
-     web:
-      exposure:
-         include: info
-   info:
-     env:
-       enabled: true
-   endpoint:
-     info:
-       enabled: true        
+ 
 
 info:
   app:
@@ -64,47 +48,3 @@ eureka:
           
 
 
-
-#       routes:
-#         - id: aplicativo_movie-service
-#           uri: lb://movie-service
-#           predicates:
-#             - Path=/api/movies/**
-#           filters:
-#             - StripPrefix=2
-#             - name: CircuitBreaker
-#               args:
-#                 name: moviesService
-#                 fallbackUri: forward:/fallback/movies
-#         - id: aplicativo_serie-service
-#           uri: lb://serie-service
-#           predicates:
-#             - Path=/api/series/**
-#           filters:
-#             - StripPrefix=2
-#             - name: CircuitBreaker
-#               args:
-#                 name: seriesService
-#                 fallbackUri: forward:/fallback/series
-                
-#         - id: aplicativo_catalog-service
-#           uri: lb://catalog-service
-#           predicates:
-#             - Path=/api/catalog/**
-#           filters:
-#             - StripPrefix=2
-#             - name: CircuitBreaker
-#               args:
-#                 name: catalogService
-#                 fallbackUri: forward:/fallback/catalog
-
-
-
-# info:
-#   app:
-#     name: ${spring.application.name}
-#     version: 1.0.0
-#     description: API Gateway
-#   svc:
-#     intanceid: ${eureka.instance.instance-id}
-#     port: ${server.port}
