@@ -23,7 +23,23 @@ spring:
           predicates:
            - Path=/api/series/**
 
-        
+queue:
+   movie:
+    name: MovieQueue
+  serie:
+    name: SerieQueue
+
+ management:
+   endpoints:
+     web:
+      exposure:
+         include: info
+   info:
+     env:
+       enabled: true
+   endpoint:
+     info:
+       enabled: true        
 
 info:
   app:
@@ -82,23 +98,7 @@ eureka:
 #                 name: catalogService
 #                 fallbackUri: forward:/fallback/catalog
 
-# queue:
-#   movie:
-#     name: MovieQueue
-#   serie:
-#     name: SerieQueue
 
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: info
-#   info:
-#     env:
-#       enabled: true
-#   endpoint:
-#     info:
-#       enabled: true
 
 # info:
 #   app:
